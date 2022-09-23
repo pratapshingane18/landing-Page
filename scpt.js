@@ -1,5 +1,8 @@
 // Toggle open/close menu
 
+const menu = document.querySelector('.menu');
+const menuBtn  = document.querySelector('.menu-btn');
+
 menuBtn.addEventListener('click', () =>{
     menubar.classList.toggle('menu-open');
 });
@@ -19,16 +22,15 @@ const anim = document.querySelectorAll('.anim');
 const r = document.querySelector(':root');
 const rs = getComputedStyle(r);
 
-let id =0;
+let id = 0;
 
 // Image Path
 const image = [
-'./l1.jpg',
-'./l2.jpg',
-'./l3.jpg',
-'./l4.jpg',
-'./l5.jpg',
-
+    "l1.jpg",
+    "l2.jpg",
+    "l3.jpg",
+    "l4.jpg",
+    "l5.jpg",
 ];
 
 // Theme Color
@@ -39,8 +41,7 @@ const colors = [
     '#b5162e',
     '#27223f',
     '#468cc2',
-
-]
+];
 
 function retrigAnim(){
     for(let i = 0; i < anim.length; i++){
@@ -58,7 +59,7 @@ function slider(i){
 
     // Reset Image Source
 
-    img.src = images[i];
+    img.src = image[i];
 
     // rechange accent color
     r.style.setProperty('--accent', colors[i]);
@@ -71,13 +72,13 @@ function slider(i){
     }
 
     // Reset active class to clicked pagination
-    pag[i].classifier.add('active');
+    pag[i].classList.add('active');
 
 }
 
 // Pagination
 
-for(let i =0; i < pag.length; i++){
+for(let i = 0; i < pag.length; i++){
     // Add click event for all pagination
     pag[i].addEventListener('click',() => {
         // Run the slider function
@@ -86,7 +87,7 @@ for(let i =0; i < pag.length; i++){
 
         // Set id to clicked pagination index
 
-        id= i;
+        id = i;
 
 
         // Stop auto slide
@@ -124,17 +125,17 @@ function nextSlide(){
     id++;
 
     if(id . pag.length -1){
-        id =0;
+        id = 0;
     }
 
 
-slider(id);
+ slider(id);
 
 }
 
 // Automate Slider
 
-let autoSlider = setInterval(nextSlide, 5000);
+let autoSlide = setInterval(nextSlide, 10000);
 
 // Stop Automatic Slide
 
@@ -143,5 +144,5 @@ function stopAutoSlide(){
 
     // Restart Auto Slider
 
-    autoSlider = setInterval(nextSlide, 5000);
+    autoSlide = setInterval(nextSlide, 10000);
 }

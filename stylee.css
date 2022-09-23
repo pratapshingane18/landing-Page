@@ -12,6 +12,8 @@ body {
 }
 
 *{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -171,8 +173,7 @@ nav li {
     grid-template-columns:1fr 1fr 3em;
     justify-content: center;
     align-content:center;
-
-
+    
 }
 
 .header-body > div{
@@ -203,7 +204,7 @@ nav li {
     left:-8%;
     width: 16%;
     height: 70%;
-    transform: translate(-50%);
+    transform: translateY(-50%);
     writing-mode: vertical-rl;
     color: #fff;
     font-size: 0.8em;
@@ -233,9 +234,8 @@ nav li {
 }
 
 .anim{
-    animation-duration: 0.8s;
+    animation-duration: 1.1s;
     animation-timing-function: cubic-bezier(.39,.08,.93,.42);
-
 
 }
 
@@ -269,6 +269,12 @@ nav li {
     flex-direction: column;
 }
 
+.social li{
+    margin: 1.5em 0;
+    writing-mode: vertical-rl;
+    font-weight: 700;
+
+}
 /* Header Bottom  */
 
 .header-bottom {
@@ -303,7 +309,8 @@ nav li {
 }
 
 
-/* @media screen and (max-width: 1000px){
+
+@media screen and (max-width: 1000px){
     .menu-btn{
         display: block;
     }
@@ -323,11 +330,10 @@ nav .menu{
     transition: 0.6s;
     overflow: hidden;
     z-index: 9;
-
-
+    
 }
 
- === Open Class for JS toggle === 
+ /* === Open Class for JS toggle ===  */
 
 nav .menu-open{
     opacity:1;
@@ -388,4 +394,4 @@ form:not(.form-mobile){
     header.menu-open{
         height:600px;
     }
-} */
+}
